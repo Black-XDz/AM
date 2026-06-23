@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amandine by Sel & Miel — Restaurant & Pâtisserie Premium à Bamako</title>
+<meta name="description" content="Amandine by Sel & Miel — restaurant, café et pâtisserie premium à Bamako. Shawarma, pâtisseries artisanales, plats signatures. Ouvert 24h/24. Terrasse spacieuse.">
+<meta name="keywords" content="restaurant Bamako, pâtisserie Bamako, shawarma Bamako, café Bamako, restaurant 24h Bamako, Amandine Sel et Miel">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+--black: #0A0A0A;
+--charcoal: #141210;
+--charcoal-mid: #1E1A16;
+--gold: #C8992A;
+--gold-light: #DEB84A;
+--gold-pale: #E8D5A3;
+--cream: #F5F0E8;
+--white: #FDFAF5;
+--text-muted: #8A7E6E;
+--border: rgba(200,153,42,0.2);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+background: var(--black);
+color: var(--cream);
+font-family: 'DM Sans', sans-serif;
+font-weight: 300;
+line-height: 1.7;
+overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+/* ── TYPOGRAPHY ── */
+.display { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-height: 1.1; letter-spacing: -0.01em; }
+.display-italic { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; }
+.label {
+font-family: 'DM Sans', sans-serif;
+font-size: 0.7rem;
+font-weight: 500;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(--gold);
+}
+
+/* ── NAV ── */
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+padding: 1.25rem 3rem;
+display: flex; align-items: center; justify-content: space-between;
+transition: background 0.4s, backdrop-filter 0.4s;
+}
+nav.scrolled {
+background: rgba(10,10,10,0.92);
+backdrop-filter: blur(20px);
+border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.25rem;
+font-weight: 500;
+color: var(--white);
+text-decoration: none;
+letter-spacing: 0.05em;
+}
+.nav-logo span { color: var(--gold); font-style: italic; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+font-size: 0.75rem;
+font-weight: 400;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(--cream);
+text-decoration: none;
+opacity: 0.75;
+transition: opacity 0.3s, color 0.3s;
+}
+.nav-links a:hover { opacity: 1; color: var(--gold-light); }
+.nav-cta {
+background: transparent;
+border: 1px solid var(--gold);
+color: var(--gold);
+padding: 0.55rem 1.5rem;
+font-size: 0.7rem;
+font-weight: 500;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+text-decoration: none;
+transition: all 0.3s;
+cursor: pointer;
+}
+.nav-cta:hover { background: var(--gold); color: var(--black); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 24px; height: 1px; background: var(--cream); transition: all 0.3s; display: block; }
+
+/* ── HERO ── /
+#hero {
+min-height: 100vh;
+position: relative;
+display: flex; align-items: center; justify-content: center;
+overflow: hidden;
+}
+.hero-bg {
+position: absolute; inset: 0; z-index: 0;
+background:
+radial-gradient(ellipse 80% 60% at 60% 40%, rgba(200,153,42,0.07) 0%, transparent 65%),
+linear-gradient(160deg, #0A0A0A 0%, #1A1208 40%, #0A0A0A 100%);
+}
+/ Decorative SVG food illustration stand-in — cinematic grain overlay /
+.hero-bg::after {
+content: '';
+position: absolute; inset: 0;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+pointer-events: none; opacity: 0.5;
+}
+/ Floating geometric accents */
+.hero-arc {
+position: absolute;
+border: 1px solid rgba(200,153,42,0.12);
+border-radius: 50%;
+pointer-events: none;
+}
+.hero-arc-1 { width: 600px; height: 600px; right: -100px; top: -100px; }
+.hero-arc-2 { width: 380px; height: 380px; right: 60px; top: 60px; border-color: rgba(200,153,42,0.07); }
+.hero-arc-3 { width: 200px; height: 200px; left: 10%; bottom: 15%; border-color: rgba(200,153,42,0.08); }
+
+.hero-content {
+position: relative; z-index: 2;
+text-align: center;
+max-width: 900px;
+padding: 0 2rem;
+animation: fadeUp 1.2s ease both;
+}
+.hero-eyebrow {
+display: inline-flex; align-items: center; gap: 1rem;
+margin-bottom: 2rem;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+content: ''; display: block; width: 40px; height: 1px; background: var(--gold); opacity: 0.6;
+}
+.hero-title {
+font-size: clamp(3.5rem, 8vw, 7rem);
+margin-bottom: 0.25rem;
+color: var(--white);
+}
+.hero-subtitle-brand {
+font-family: 'Cormorant Garamond', serif;
+font-style: italic;
+font-size: clamp(1.2rem, 3vw, 2rem);
+color: var(--gold-pale);
+font-weight: 300;
+margin-bottom: 2rem;
+letter-spacing: 0.08em;
+}
+.hero-desc {
+font-size: 0.95rem;
+color: rgba(245,240,232,0.65);
+max-width: 560px;
+margin: 0 auto 3rem;
+line-height: 1.9;
+font-weight: 300;
+}
+.hero-desc strong { color: var(--gold-pale); font-weight: 400; }
+.hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+background: var(--gold);
+color: var(--black);
+padding: 0.9rem 2.5rem;
+font-size: 0.75rem;
+font-weight: 600;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+text-decoration: none;
+transition: all 0.3s;
+display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(200,153,42,0.3); }
+.btn-ghost {
+border: 1px solid rgba(245,240,232,0.3);
+color: var(--cream);
+padding: 0.9rem 2.5rem;
+font-size: 0.75rem;
+font-weight: 400;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+text-decoration: none;
+transition: all 0.3s;
+display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.btn-wa {
+background: #128C7E;
+color: #fff;
+padding: 0.9rem 2rem;
+font-size: 0.75rem;
+font-weight: 500;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+text-decoration: none;
+transition: all 0.3s;
+display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-wa:hover { background: #075E54; transform: translateY(-2px); }
+.hero-scroll {
+position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+animation: fadeIn 2s 1s both;
+}
+.hero-scroll span { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.4; color: var(--cream); }
+.scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s infinite; }
+
+/* ── DIVIDER SEAL ── */
+.seal-divider {
+display: flex; align-items: center; justify-content: center; gap: 1.5rem;
+padding: 1rem 0;
+}
+.seal-divider::before, .seal-divider::after {
+content: ''; flex: 1; height: 1px;
+background: linear-gradient(to var(--dir, right), transparent, rgba(200,153,42,0.3));
+}
+.seal-icon {
+width: 48px; height: 48px;
+border: 1px solid rgba(200,153,42,0.35);
+border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-family: 'Cormorant Garamond', serif;
+font-size: 0.9rem;
+color: var(--gold);
+font-style: italic;
+letter-spacing: 0.05em;
+flex-shrink: 0;
+}
+
+/* ── SECTIONS SHARED ── */
+section { padding: 7rem 3rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 5rem; }
+.section-title { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--white); margin: 0.75rem 0 1.25rem; }
+.section-lead { font-size: 1rem; color: var(--text-muted); max-width: 540px; margin: 0 auto; line-height: 1.85; }
+
+/* ── ABOUT ── */
+#about { background: var(--charcoal); }
+.about-grid {
+display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+}
+.about-visual {
+position: relative;
+}
+.about-card {
+background: var(--charcoal-mid);
+border: 1px solid var(--border);
+padding: 3rem 2.5rem;
+position: relative;
+}
+.about-card::before {
+content: '';
+position: absolute; top: -12px; left: -12px; right: 12px; bottom: 12px;
+border: 1px solid rgba(200,153,42,0.12);
+pointer-events: none;
+}
+.about-stat {
+display: flex; flex-direction: column; gap: 0.2rem; margin-bottom: 2rem;
+}
+.about-stat:last-child { margin-bottom: 0; }
+.about-stat-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 3.5rem;
+font-weight: 300;
+color: var(--gold);
+line-height: 1;
+}
+.about-stat-label { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); }
+.about-badge {
+display: inline-flex; align-items: center; gap: 0.5rem;
+background: rgba(200,153,42,0.08);
+border: 1px solid rgba(200,153,42,0.25);
+padding: 0.4rem 1rem;
+font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+color: var(--gold); margin-bottom: 2rem;
+}
+.about-text h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--white); margin: 0.5rem 0 1.5rem; }
+.about-text p { color: rgba(245,240,232,0.7); margin-bottom: 1.25rem; line-height: 1.9; }
+.about-text p em { color: var(--gold-pale); font-style: normal; }
+
+/* ── SPECIALTIES ── */
+#specialties { background: var(--black); }
+.spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; }
+.spec-card {
+position: relative; overflow: hidden;
+padding: 3rem 2rem;
+background: var(--charcoal-mid);
+transition: background 0.4s;
+cursor: default;
+min-height: 320px;
+display: flex; flex-direction: column; justify-content: flex-end;
+}
+.spec-card:hover { background: #1E1A10; }
+.spec-card::before {
+content: '';
+position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+background: linear-gradient(to right, transparent, var(--gold), transparent);
+transform: scaleX(0); transition: transform 0.4s;
+transform-origin: left;
+}
+.spec-card:hover::before { transform: scaleX(1); }
+.spec-icon {
+font-size: 2.5rem; margin-bottom: 1.5rem;
+display: block;
+filter: grayscale(0.2);
+}
+.spec-num {
+position: absolute; top: 2rem; right: 2rem;
+font-family: 'Cormorant Garamond', serif;
+font-size: 4rem; font-weight: 300;
+color: rgba(200,153,42,0.08);
+line-height: 1; pointer-events: none;
+}
+.spec-card h3 {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.6rem; font-weight: 400;
+color: var(--white); margin-bottom: 0.75rem;
+}
+.spec-card p { font-size: 0.87rem; color: rgba(245,240,232,0.55); line-height: 1.8; }
+.spec-tag {
+margin-top: 1.25rem; display: inline-block;
+font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+color: var(--gold); border-bottom: 1px solid rgba(200,153,42,0.3);
+padding-bottom: 2px;
+}
+
+/* ── MENU ── */
+#menu { background: var(--charcoal); }
+.menu-tabs {
+display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
+margin-bottom: 4rem;
+border-bottom: 1px solid var(--border);
+}
+.menu-tab {
+padding: 0.85rem 2rem;
+font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+color: var(--text-muted); cursor: pointer;
+background: none; border: none;
+border-bottom: 2px solid transparent;
+margin-bottom: -1px;
+transition: color 0.3s, border-color 0.3s;
+font-family: 'DM Sans', sans-serif;
+}
+.menu-tab.active, .menu-tab:hover { color: var(--gold); border-bottom-color: var(--gold); }
+.menu-grid {
+display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 1px;
+background: var(--border);
+}
+.menu-item {
+background: var(--charcoal-mid);
+padding: 2rem 1.75rem;
+transition: background 0.3s;
+display: flex; flex-direction: column; gap: 0.5rem;
+}
+.menu-item:hover { background: #1E1A14; }
+.menu-item-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.menu-item-name {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.15rem; font-weight: 500;
+color: var(--white);
+}
+.menu-item-price {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1rem; color: var(--gold);
+white-space: nowrap; flex-shrink: 0;
+}
+.menu-item-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.75; }
+.menu-item-badge {
+font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+color: var(--gold);
+border: 1px solid rgba(200,153,42,0.25);
+padding: 0.2rem 0.6rem;
+width: fit-content;
+}
+
+/* ── MENU CARD WITH IMAGE ── */
+.menu-item {
+flex-direction: column;
+padding: 0;
+overflow: hidden;
+}
+.menu-item-img {
+width: 100%; height: 190px;
+object-fit: cover;
+display: block;
+transition: transform 0.55s ease;
+background: var(--charcoal);
+}
+.menu-item:hover .menu-item-img { transform: scale(1.06); }
+.menu-item-img-wrap {
+overflow: hidden;
+position: relative;
+height: 190px;
+flex-shrink: 0;
+}
+.menu-item-img-wrap::after {
+content: '';
+position: absolute; inset: 0;
+background: linear-gradient(to bottom, transparent 40%, rgba(10,10,10,0.55) 100%);
+pointer-events: none;
+}
+.menu-item-body {
+padding: 1.5rem 1.75rem 1.75rem;
+display: flex; flex-direction: column; gap: 0.5rem;
+flex: 1;
+}
+
+/* ── REVIEWS ── */
+#reviews { background: var(--black); }
+.rating-hero {
+display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+margin-bottom: 5rem;
+}
+.rating-score {
+font-family: 'Cormorant Garamond', serif;
+font-size: 6rem; font-weight: 300; color: var(--gold); line-height: 1;
+}
+.stars { display: flex; gap: 4px; font-size: 1.25rem; color: var(--gold); }
+.rating-meta { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; margin-bottom: 1.5px; }
+.review-card {
+background: var(--charcoal-mid);
+padding: 2.5rem 2rem;
+position: relative;
+}
+.review-quote {
+font-family: 'Cormorant Garamond', serif;
+font-size: 3rem; font-weight: 300;
+color: rgba(200,153,42,0.15);
+line-height: 1;
+margin-bottom: 0.5rem;
+}
+.review-text {
+font-size: 0.95rem; color: rgba(245,240,232,0.75);
+line-height: 1.8; font-style: italic;
+font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;
+margin-bottom: 1.5rem;
+}
+.review-author { display: flex; align-items: center; gap: 0.75rem; }
+.review-avatar {
+width: 36px; height: 36px; border-radius: 50%;
+background: linear-gradient(135deg, var(--gold), #8B6A1A);
+display: flex; align-items: center; justify-content: center;
+font-size: 0.8rem; font-weight: 600; color: var(--black);
+flex-shrink: 0;
+}
+.review-name { font-size: 0.8rem; font-weight: 500; color: var(--cream); }
+.review-stars { font-size: 0.65rem; color: var(--gold); }
+
+/* ── TERRACE ── */
+#terrace { background: var(--charcoal); overflow: hidden; }
+.terrace-inner {
+display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch;
+}
+.terrace-visual {
+background: linear-gradient(135deg, #1A1408 0%, #0E0C06 50%, #1A1408 100%);
+padding: 5rem 4rem;
+position: relative; overflow: hidden;
+display: flex; align-items: center; justify-content: center;
+}
+.terrace-visual::before {
+content: '';
+position: absolute; inset: 20px;
+border: 1px solid rgba(200,153,42,0.12);
+}
+.terrace-ambience {
+font-family: 'Cormorant Garamond', serif;
+font-size: 7rem; font-weight: 300;
+color: rgba(200,153,42,0.06);
+text-align: center;
+line-height: 0.9;
+pointer-events: none;
+position: absolute;
+inset: 0; display: flex; align-items: center; justify-content: center;
+font-style: italic;
+}
+.terrace-icon-grid {
+display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+position: relative; z-index: 1;
+}
+.terrace-icon-item {
+display: flex; flex-direction: column; gap: 0.5rem;
+padding: 1.5rem; background: rgba(10,10,10,0.5);
+border: 1px solid rgba(200,153,42,0.1);
+text-align: center;
+}
+.terrace-icon-item span:first-child { font-size: 1.75rem; }
+.terrace-icon-item .ti-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.terrace-icon-item .ti-desc { font-size: 0.78rem; color: var(--text-muted); }
+.terrace-content { padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+.terrace-content h2 { font-size: clamp(2rem, 4vw, 3.2rem); color: var(--white); margin: 0.75rem 0 1.5rem; }
+.terrace-content p { color: rgba(245,240,232,0.65); line-height: 1.9; margin-bottom: 1.25rem; }
+.terrace-features { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+.terrace-feat {
+display: flex; align-items: flex-start; gap: 1rem;
+padding-bottom: 1rem; border-bottom: 1px solid var(--border);
+}
+.terrace-feat:last-child { border-bottom: none; }
+.feat-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; margin-top: 0.5rem; flex-shrink: 0; }
+.feat-text { font-size: 0.87rem; color: rgba(245,240,232,0.65); }
+.feat-text strong { color: var(--cream); font-weight: 500; display: block; margin-bottom: 0.25rem; }
+
+/* ── CONTACT ── */
+#contact { background: var(--black); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.contact-info { display: flex; flex-direction: column; gap: 2rem; }
+.contact-item {
+display: flex; gap: 1.25rem; align-items: flex-start;
+padding-bottom: 2rem; border-bottom: 1px solid var(--border);
+}
+.contact-item:last-child { border-bottom: none; }
+.contact-icon {
+width: 44px; height: 44px; flex-shrink: 0;
+border: 1px solid var(--border);
+display: flex; align-items: center; justify-content: center;
+font-size: 1.1rem;
+}
+.contact-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+.contact-val { font-size: 1rem; color: var(--cream); }
+.contact-val a { color: inherit; text-decoration: none; }
+.contact-val a:hover { color: var(--gold); }
+.open-badge {
+display: inline-flex; align-items: center; gap: 0.5rem;
+background: rgba(34,197,94,0.08);
+border: 1px solid rgba(34,197,94,0.25);
+color: #4ADE80; padding: 0.4rem 1rem;
+font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+}
+.open-dot { width: 6px; height: 6px; background: #4ADE80; border-radius: 50%; animation: pulse-green 2s infinite; }
+.contact-ctas { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
+.cta-btn {
+display: flex; align-items: center; gap: 0.75rem;
+padding: 1rem 1.5rem;
+text-decoration: none; font-size: 0.8rem; font-weight: 500;
+letter-spacing: 0.1em; text-transform: uppercase;
+transition: all 0.3s;
+}
+.cta-btn-call { background: rgba(200,153,42,0.08); border: 1px solid var(--border); color: var(--gold); }
+.cta-btn-call:hover { background: var(--gold); color: var(--black); }
+.cta-btn-wa { background: rgba(18,140,126,0.1); border: 1px solid rgba(18,140,126,0.3); color: #4AE0C8; }
+.cta-btn-wa:hover { background: #128C7E; color: #fff; }
+.cta-btn-fb { background: rgba(66,103,178,0.1); border: 1px solid rgba(66,103,178,0.3); color: #90AFEE; }
+.cta-btn-fb:hover { background: #4267B2; color: #fff; }
+.map-embed {
+background: var(--charcoal-mid);
+border: 1px solid var(--border);
+overflow: hidden;
+position: relative;
+}
+.map-embed iframe {
+width: 100%; height: 400px; border: none; display: block;
+filter: grayscale(0.8) contrast(1.1);
+transition: filter 0.4s;
+}
+.map-embed:hover iframe { filter: grayscale(0.2); }
+.map-overlay-label {
+position: absolute; top: 1rem; left: 1rem;
+background: var(--black); border: 1px solid var(--border);
+padding: 0.5rem 1rem;
+font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold);
+}
+
+/* ── FOOTER ── */
+footer {
+background: var(--charcoal);
+border-top: 1px solid var(--border);
+padding: 5rem 3rem 2rem;
+}
+.footer-grid {
+max-width: 1200px; margin: 0 auto;
+display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem;
+margin-bottom: 4rem;
+}
+.footer-brand-name {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.4rem; font-weight: 500;
+color: var(--white); margin-bottom: 0.25rem;
+}
+.footer-brand-tagline {
+font-size: 0.75rem; color: var(--gold); font-style: italic;
+font-family: 'Cormorant Garamond', serif; margin-bottom: 1.25rem;
+}
+.footer-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.5rem; }
+.footer-socials { display: flex; gap: 0.75rem; }
+.footer-social {
+width: 36px; height: 36px; border: 1px solid var(--border);
+display: flex; align-items: center; justify-content: center;
+font-size: 0.75rem; color: var(--text-muted); text-decoration: none;
+transition: all 0.3s;
+}
+.footer-social:hover { border-color: var(--gold); color: var(--gold); }
+.footer-col h4 {
+font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+color: var(--gold); margin-bottom: 1.5rem;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-links a {
+font-size: 0.85rem; color: var(--text-muted); text-decoration: none; transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--cream); }
+.footer-bottom {
+max-width: 1200px; margin: 0 auto;
+padding-top: 2rem; border-top: 1px solid var(--border);
+display: flex; justify-content: space-between; align-items: center;
+font-size: 0.75rem; color: var(--text-muted);
+}
+
+/* ── FLOATING BUTTONS ── */
+.float-wa {
+position: fixed; bottom: 2rem; right: 2rem; z-index: 50;
+width: 56px; height: 56px;
+background: #128C7E;
+border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+box-shadow: 0 8px 30px rgba(18,140,126,0.4);
+text-decoration: none; font-size: 1.5rem;
+transition: transform 0.3s, box-shadow 0.3s;
+animation: floatIn 1s 1.5s both;
+}
+.float-wa:hover { transform: scale(1.1); box-shadow: 0 12px 40px rgba(18,140,126,0.6); }
+.float-wa-tooltip {
+position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+background: var(--charcoal-mid); border: 1px solid var(--border);
+padding: 0.4rem 0.85rem;
+font-size: 0.7rem; letter-spacing: 0.1em; color: var(--cream); white-space: nowrap;
+opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.float-wa:hover .float-wa-tooltip { opacity: 1; }
+
+/* Mobile sticky CTA */
+.mobile-sticky {
+display: none;
+position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+background: rgba(10,10,10,0.95);
+backdrop-filter: blur(20px);
+border-top: 1px solid var(--border);
+padding: 0.85rem 1rem;
+gap: 0.75rem;
+}
+.mobile-sticky a {
+flex: 1; text-align: center;
+padding: 0.75rem 0.5rem;
+font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
+text-transform: uppercase; text-decoration: none; transition: all 0.3s;
+}
+.ms-call { background: var(--gold); color: var(--black); }
+.ms-wa { background: #128C7E; color: #fff; }
+.ms-menu { border: 1px solid var(--border); color: var(--cream); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes scrollPulse {
+0%, 100% { opacity: 0.4; transform: scaleY(1); }
+50% { opacity: 1; transform: scaleY(1.1); }
+}
+@keyframes pulse-green {
+0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+50% { box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+}
+@keyframes floatIn {
+from { opacity: 0; transform: scale(0.5); }
+to { opacity: 1; transform: scale(1); }
+}
+
+/* Reveal animation */
+.reveal {
+opacity: 0; transform: translateY(28px);
+transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+nav { padding: 1rem 1.5rem; }
+.nav-links, .nav-cta { display: none; }
+.hamburger { display: flex; }
+section { padding: 5rem 1.5rem; }
+.about-grid, .terrace-inner, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+.reviews-grid { grid-template-columns: 1fr; }
+.spec-grid { grid-template-columns: 1fr 1fr; }
+.footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+.mobile-sticky { display: flex; }
+section { padding-bottom: 7rem; }
+.float-wa { bottom: 5.5rem; }
+.terrace-content { padding: 3rem 1.5rem; }
+.terrace-visual { padding: 3rem 1.5rem; min-height: 300px; }
+}
+@media (max-width: 600px) {
+.spec-grid { grid-template-columns: 1fr; }
+.footer-grid { grid-template-columns: 1fr; }
+.hero-ctas { flex-direction: column; align-items: center; }
+.menu-tabs { gap: 0; }
+.menu-tab { padding: 0.75rem 1rem; font-size: 0.65rem; }
+.terrace-icon-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Mobile nav overlay */
+.mobile-nav {
+display: none;
+position: fixed; inset: 0; z-index: 200;
+background: rgba(10,10,10,0.97);
+backdrop-filter: blur(20px);
+flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2.5rem; font-weight: 300;
+color: var(--cream); text-decoration: none;
+letter-spacing: 0.05em;
+transition: color 0.3s;
+}
+.mobile-nav a:hover { color: var(--gold); }
+.mobile-nav-close {
+position: absolute; top: 1.5rem; right: 1.5rem;
+background: none; border: none; cursor: pointer;
+color: var(--cream); font-size: 1.5rem;
+}
+</style>
+</head>
+<body>
+
+<!-- ── MOBILE NAV OVERLAY ── -->
+<div class="mobile-nav" id="mobileNav">
+<button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
+<a href="#about" onclick="closeMobileNav()">Notre Histoire</a>
+<a href="#specialties" onclick="closeMobileNav()">Spécialités</a>
+<a href="#menu" onclick="closeMobileNav()">Menu</a>
+<a href="#reviews" onclick="closeMobileNav()">Avis</a>
+<a href="#terrace" onclick="closeMobileNav()">Terrasse</a>
+<a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+<a href="#" class="nav-logo">Amandine <span>by Sel & Miel</span></a>
+<ul class="nav-links">
+<li><a href="#about">Notre Histoire</a></li>
+<li><a href="#specialties">Spécialités</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#reviews">Avis</a></li>
+<li><a href="#terrace">Terrasse</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<a href="https://wa.me/22376359999" target="_blank" class="nav-cta">Commander</a>
+<div class="hamburger" onclick="openMobileNav()">
+<span></span><span></span><span></span>
+</div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+<div class="hero-bg"></div>
+<div class="hero-arc hero-arc-1"></div>
+<div class="hero-arc hero-arc-2"></div>
+<div class="hero-arc hero-arc-3"></div>
+
+<div class="hero-content">
+<div class="hero-eyebrow">
+<span class="label">Bamako · Ouvert 24h/24</span>
+</div>
+<h1 class="display hero-title">
+Saveurs d'Exception<br>à <em style="color:var(--gold-pale)">Bamako</em>
+</h1>
+<p class="hero-subtitle-brand">Amandine by Sel & Miel</p>
+<p class="hero-desc">
+Shawarma <strong>savoureux</strong>, pâtisseries artisanales, plats signatures raffinés — et une <strong>terrasse spacieuse</strong> pour savourer chaque instant. Disponible <strong>24 heures sur 24</strong>, 7 jours sur 7.
+</p>
+<div class="hero-ctas">
+<a href="#menu" class="btn-primary">
+✦ Voir le Menu
+</a>
+<a href="https://wa.me/22376359999" target="_blank" class="btn-wa">
+💬 Commander sur WhatsApp
+</a>
+<a href="tel:+22376359999" class="btn-ghost">
+📞 Appeler
+</a>
+</div>
+</div>
+
+<div class="hero-scroll">
+<div class="scroll-line"></div>
+<span>Découvrir</span>
+</div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+<div class="container">
+<div class="about-grid">
+<div class="about-visual reveal">
+<div class="about-card">
+<div class="about-stat">
+<span class="about-stat-num">1 623</span>
+<span class="about-stat-label">Avis Google</span>
+</div>
+<div class="about-stat">
+<span class="about-stat-num">3.7</span>
+<span class="about-stat-label">Note moyenne ★</span>
+</div>
+<div class="about-stat">
+<span class="about-stat-num">24H</span>
+<span class="about-stat-label">Disponibilité</span>
+</div>
+</div>
+</div>
+<div class="about-text reveal reveal-delay-2">
+<span class="label">Notre Histoire</span>
+<h2 class="display">L'Art de Recevoir,<br><em class="display-italic">Réinventé</em></h2>
+<div class="about-badge">✦ Restaurant · Café · Pâtisserie</div>
+<p>Née de la passion et du savoir-faire, <em>Amandine by Sel & Miel</em> est plus qu'un restaurant — c'est une expérience sensorielle. Nous avons créé un espace où chaque plat raconte une histoire, où chaque bouchée invite au voyage.</p>
+<p>Du <em>shawarma savoureux</em> aux pâtisseries délicates, en passant par nos plats maison aux saveurs généreuses, notre cuisine est un hommage à la richesse des ingrédients et à l'exigence du geste.</p>
+<p>Dans un cadre élégant au cœur de Bamako, notre terrasse et notre salle accueillent aussi bien les repas d'affaires que les soirées entre amis — à <em>toute heure du jour et de la nuit.</em></p>
+<div style="margin-top:2rem;">
+<a href="#menu" class="btn-primary">Explorer notre menu ✦</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SEAL DIVIDER -->
+<div class="container" style="padding:0 3rem;"><div class="seal-divider"><div class="seal-icon">S&M</div></div></div>
+
+<!-- ── SPECIALTIES ── -->
+<section id="specialties">
+<div class="container">
+<div class="section-header reveal">
+<span class="label">Nos Créations</span>
+<h2 class="display section-title">Spécialités de la Maison</h2>
+<p class="section-lead">Des créations pensées pour éveiller les sens — généreuses, sincères, inoubliables.</p>
+</div>
+<div class="spec-grid">
+<div class="spec-card reveal">
+<span class="spec-num">01</span>
+<span class="spec-icon">🥙</span>
+<h3>Shawarma d'Excellence</h3>
+<p>Notre shawarma signature, marinée longuement dans des épices sélectionnées, grillée à la perfection et servie avec des sauces maison. Un régal applaudi par nos clients.</p>
+<span class="spec-tag">★ Favori des clients</span>
+</div>
+<div class="spec-card reveal reveal-delay-1">
+<span class="spec-num">02</span>
+<span class="spec-icon">🥐</span>
+<h3>Pâtisserie Artisanale</h3>
+<p>Façonnées chaque matin par nos pâtissiers, nos viennoiseries et pâtisseries fondent de délicatesse. Croissants feuilletés, éclairs dorés, tartelettes aux fruits de saison.</p>
+<span class="spec-tag">★ Fait maison</span>
+</div>
+<div class="spec-card reveal reveal-delay-2">
+<span class="spec-num">03</span>
+<span class="spec-icon">🎂</span>
+<h3>Gâteaux & Créations</h3>
+<p>Des gâteaux d'exception pour chaque occasion — anniversaires, événements, célébrations. Réalisés sur commande avec des ingrédients de première qualité.</p>
+<span class="spec-tag">★ Sur commande</span>
+</div>
+<div class="spec-card reveal reveal-delay-1">
+<span class="spec-num">04</span>
+<span class="spec-icon">🍽️</span>
+<h3>Plats Signatures</h3>
+<p>Une carte généreuse de plats succulents, cuisinés avec soin et passion. De l'entrée au dessert, chaque assiette est une invitation à savourer.</p>
+<span class="spec-tag">★ Fait sur place</span>
+</div>
+<div class="spec-card reveal reveal-delay-2">
+<span class="spec-num">05</span>
+<span class="spec-icon">☕</span>
+<h3>Café & Boissons</h3>
+<p>Expressos intenses, cappuccinos veloutés, jus frais pressés et boissons de saison pour accompagner chaque moment de votre journée.</p>
+<span class="spec-tag">★ Toute la journée</span>
+</div>
+<div class="spec-card reveal reveal-delay-3">
+<span class="spec-num">06</span>
+<span class="spec-icon">🌿</span>
+<h3>Expérience Terrasse</h3>
+<p>Savourez vos plats préférés en plein air sur notre terrasse spacieuse et conviviale — l'adresse idéale pour se retrouver, se détendre et profiter.</p>
+<span class="spec-tag">★ Grande capacité</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ── MENU ── -->
+<section id="menu">
+<div class="container">
+<div class="section-header reveal">
+<span class="label">Notre Carte</span>
+<h2 class="display section-title">Menu & Saveurs</h2>
+<p class="section-lead">Une sélection généreuse pour tous les goûts — du léger au gourmand.</p>
+</div>
+
+<div class="menu-tabs">
+<button class="menu-tab active" onclick="filterMenu('shawarma', this)">Shawarma</button>
+<button class="menu-tab" onclick="filterMenu('patisserie', this)">Pâtisseries</button>
+<button class="menu-tab" onclick="filterMenu('gateau', this)">Gâteaux</button>
+<button class="menu-tab" onclick="filterMenu('plats', this)">Plats</button>
+<button class="menu-tab" onclick="filterMenu('boissons', this)">Boissons</button>
+</div>
+
+<div class="menu-grid" id="menuGrid">
+
+<!-- ═══ SHAWARMA ═══ -->
+<div class="menu-item" data-cat="shawarma">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/shawarma-poulet.jpg" alt="Shawarma Poulet Classic" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Shawarma Poulet Classic</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Poulet mariné aux épices orientales, sauce maison, légumes croquants dans du pain maison grillé.</p>
+<span class="menu-item-badge">★ Best-seller</span>
+</div>
+</div>
+
+<div class="menu-item" data-cat="shawarma">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/shawarma-viande.jpeg" alt="Shawarma Viande" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Shawarma Viande</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Viande de bœuf tendre, marinée lentement, garnie de tomates fraîches et de sauce tahini.</p>
+</div>
+</div>
+
+<div class="menu-item" data-cat="shawarma">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/shawarma-mixte.jpeg" alt="Shawarma Mixte" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Shawarma Mixte</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Le meilleur des deux mondes — poulet et viande grillés ensemble, sauce double.</p>
+<span class="menu-item-badge">Populaire</span>
+</div>
+</div>
+
+<!-- ═══ PÂTISSERIES ═══ -->
+<div class="menu-item" data-cat="patisserie" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/croissant-beurre.jpeg" alt="Croissant Beurre" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Croissant Beurre</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Feuilletage délicat, dorure parfaite. Notre croissant artisanal du matin.</p>
+<span class="menu-item-badge">★ Fait maison</span>
+</div>
+</div>
+
+<div class="menu-item" data-cat="patisserie" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/eclair-chocolat.jpeg" alt="Éclair au Chocolat" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Éclair au Chocolat</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Choux léger, crème pâtissière intense, glaçage chocolat noir brillant.</p>
+</div>
+</div>
+
+<div class="menu-item" data-cat="patisserie" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/tartelette-fruits.jpeg" alt="Tartelette Fruits Frais" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Tartelette Fruits Frais</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Pâte sablée croustillante, crème d'amande, fruits de saison sélectionnés.</p>
+</div>
+</div>
+
+<div class="menu-item" data-cat="patisserie" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/pain-chocolat.jpeg" alt="Pain au Chocolat" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Pain au Chocolat</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Pâte feuilletée beurrée enrobant deux barres de chocolat fondant.</p>
+<span class="menu-item-badge">★ Favori</span>
+</div>
+</div>
+
+<!-- ═══ GÂTEAUX ═══ -->
+<div class="menu-item" data-cat="gateau" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/gateau-anniversaire.jpeg" alt="Gâteau d'Anniversaire" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Gâteau d'Anniversaire</span>
+<span class="menu-item-price">Sur devis</span>
+</div>
+<p class="menu-item-desc">Créations personnalisées sur commande — saveurs, décors et thèmes au choix.</p>
+<span class="menu-item-badge">Sur commande</span>
+</div>
+</div>
+
+<div class="menu-item" data-cat="gateau" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/layer-cake.jpeg" alt="Layer Cake Signature" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Layer Cake Signature</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Plusieurs couches de génoise moelleuse, crème légère vanille, fruits frais.</p>
+</div>
+</div>
+
+<div class="menu-item" data-cat="gateau" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/fondant-chocolat.jpeg" alt="Fondant Chocolat Chaud" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Fondant Chocolat Chaud</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Gâteau au chocolat coulant, servi tiède avec une boule de glace vanille.</p>
+<span class="menu-item-badge">★ Incontournable</span>
+</div>
+</div>
+
+<!-- ═══ PLATS ═══ -->
+<div class="menu-item" data-cat="plats" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/plat-du-jour.jpeg" alt="Plat du Jour" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Plat du Jour</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Une sélection quotidienne de plats maison cuisinés avec des produits frais du marché.</p>
+<span class="menu-item-badge">Chaque jour</span>
+</div>
+</div>
+
+<div class="menu-item" data-cat="plats" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/plat-garni.jpeg" alt="Plats Garnis Maison" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Plats Garnis Maison</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Viandes et légumes mijotés, servis avec riz ou frites — généreux et savoureux.</p>
+</div>
+</div>
+
+<div class="menu-item" data-cat="plats" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/burger-signature.jpeg" alt="Burger Signature" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Burger Signature</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Steak haché maison, fromage fondu, légumes croquants, sauce secrète Amandine.</p>
+<span class="menu-item-badge">★ Populaire</span>
+</div>
+</div>
+
+<!-- ═══ BOISSONS ═══ -->
+<div class="menu-item" data-cat="boissons" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/cafe-espresso.jpeg" alt="Café Espresso" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Café Espresso</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Grain sélectionné, extraction précise — un espresso intense et aromatique.</p>
+</div>
+</div>
+
+<div class="menu-item" data-cat="boissons" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/jus-frais.jpeg" alt="Jus Frais Pressés" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Jus Frais Pressés</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Mangue, orange, pastèque — pressés à la commande pour une fraîcheur maximale.</p>
+<span class="menu-item-badge">★ 100% Frais</span>
+</div>
+</div>
+
+<div class="menu-item" data-cat="boissons" style="display:none">
+<div class="menu-item-img-wrap">
+<img class="menu-item-img" src="images/cappuccino.jpeg" alt="Cappuccino & Lattes" loading="lazy">
+</div>
+<div class="menu-item-body">
+<div class="menu-item-header">
+<span class="menu-item-name">Cappuccino & Lattes</span>
+<span class="menu-item-price">— CFA</span>
+</div>
+<p class="menu-item-desc">Mousse de lait soyeuse, espresso équilibré — notre cappuccino signature.</p>
+</div>
+</div>
+
+</div>
+
+<div style="text-align:center; margin-top:3rem;">
+<a href="https://wa.me/22376359999?text=Bonjour%2C%20je%20souhaite%20passer%20une%20commande" target="_blank" class="btn-primary">
+💬 Commander sur WhatsApp
+</a>
+</div>
+</div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section id="reviews">
+<div class="container">
+<div class="section-header reveal">
+<span class="label">Ce que disent nos clients</span>
+<h2 class="display section-title">Avis & Témoignages</h2>
+</div>
+<div class="rating-hero reveal">
+<span class="rating-score">3.7</span>
+<div class="stars">★★★★<span style="opacity:0.4">★</span></div>
+<span class="rating-meta">1 623 avis Google · Bamako</span>
+</div>
+<div class="reviews-grid">
+<div class="review-card reveal">
+<div class="review-quote">"</div>
+<p class="review-text">J'adore leur pâtisserie ! Les croissants sont fondants et les éclairs sont tout simplement délicieux. Une adresse incontournable à Bamako.</p>
+<div class="review-author">
+<div class="review-avatar">F</div>
+<div>
+<div class="review-name">Fatou D.</div>
+<div class="review-stars">★★★★★</div>
+</div>
+</div>
+</div>
+<div class="review-card reveal reveal-delay-1">
+<div class="review-quote">"</div>
+<p class="review-text">Le shawarma est excellent — la marinade est parfaite, les portions sont généreuses. Je reviens chaque semaine. Le meilleur de Bamako selon moi !</p>
+<div class="review-author">
+<div class="review-avatar">M</div>
+<div>
+<div class="review-name">Moussa K.</div>
+<div class="review-stars">★★★★★</div>
+</div>
+</div>
+</div>
+<div class="review-card reveal reveal-delay-2">
+<div class="review-quote">"</div>
+<p class="review-text">Grand choix au menu et beaucoup de places assises. La terrasse est agréable pour passer un bon moment en famille ou entre amis. Les plats sont succulents !</p>
+<div class="review-author">
+<div class="review-avatar">A</div>
+<div>
+<div class="review-name">Aminata S.</div>
+<div class="review-stars">★★★★<span style="opacity:0.4">★</span></div>
+</div>
+</div>
+</div>
+</div>
+<div style="text-align:center; margin-top:3rem;">
+<p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem;">Basé sur 1 623 avis Google · Mis à jour régulièrement</p>
+<a href="https://wa.me/22376359999" target="_blank" class="btn-ghost">Réserver maintenant →</a>
+</div>
+</div>
+</section>
+
+<!-- ── TERRACE ── -->
+<section id="terrace" style="padding:0;">
+<div class="terrace-inner">
+<div class="terrace-visual">
+<div class="terrace-ambience">Terrasse</div>
+<div class="terrace-icon-grid">
+<div class="terrace-icon-item">
+<span>🌿</span>
+<span class="ti-label">Plein Air</span>
+<span class="ti-desc">Atmosphère fraîche et ouverte</span>
+</div>
+<div class="terrace-icon-item">
+<span>🪑</span>
+<span class="ti-label">Grand Espace</span>
+<span class="ti-desc">Nombreuses places assises</span>
+</div>
+<div class="terrace-icon-item">
+<span>🌙</span>
+<span class="ti-label">Soir & Nuit</span>
+<span class="ti-desc">Ambiance tamisée unique</span>
+</div>
+<div class="terrace-icon-item">
+<span>👨‍👩‍👧</span>
+<span class="ti-label">Familles & Groupes</span>
+<span class="ti-desc">Idéal pour tout rassemblement</span>
+</div>
+</div>
+</div>
+<div class="terrace-content">
+<span class="label">Notre Terrasse</span>
+<h2 class="display">Un Espace<br><em class="display-italic">Pour Se Retrouver</em></h2>
+<p>Notre terrasse spacieuse est l'un des espaces les plus appréciés de nos clients. Que ce soit pour un déjeuner ensoleillé, un dîner nocturne sous les étoiles ou une pause café en plein air — l'atmosphère y est toujours chaleureuse.</p>
+<div class="terrace-features">
+<div class="terrace-feat">
+<div class="feat-dot"></div>
+<div class="feat-text">
+<strong>Grande capacité d'accueil</strong>
+Espace pensé pour les repas en famille, entre amis ou en équipe.
+</div>
+</div>
+<div class="terrace-feat">
+<div class="feat-dot"></div>
+<div class="feat-text">
+<strong>Ambiance unique en soirée</strong>
+Éclairage tamisé et atmosphère apaisante pour vos soirées inoubliables.
+</div>
+</div>
+<div class="terrace-feat">
+<div class="feat-dot"></div>
+<div class="feat-text">
+<strong>Accès 24h/24</strong>
+Profitez de la terrasse à toute heure — Amandine ne ferme jamais.
+</div>
+</div>
+</div>
+<div style="margin-top:2.5rem;">
+<a href="https://wa.me/22376359999?text=Bonjour%2C%20je%20voudrais%20réserver%20une%20table%20en%20terrasse" target="_blank" class="btn-primary">Réserver en Terrasse →</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+<div class="container">
+<div class="section-header reveal">
+<span class="label">Nous Trouver</span>
+<h2 class="display section-title">Contact & Localisation</h2>
+<p class="section-lead">Retrouvez-nous à Bamako, disponibles 24h/24 pour répondre à vos besoins.</p>
+</div>
+<div class="contact-grid">
+<div class="contact-info reveal">
+<div class="contact-item">
+<div class="contact-icon">📍</div>
+<div>
+<div class="contact-label">Adresse</div>
+<div class="contact-val">J2C7+8X5, 734<br>Bamako, Mali</div>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">📞</div>
+<div>
+<div class="contact-label">Téléphone</div>
+<div class="contact-val"><a href="tel:+22376359999">76 35 99 99</a></div>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">🕐</div>
+<div>
+<div class="contact-label">Horaires</div>
+<div class="contact-val">
+<span class="open-badge"><span class="open-dot"></span>Ouvert 24h/24, 7j/7</span>
+</div>
+</div>
+</div>
+<div class="contact-ctas">
+<a href="tel:+22376359999" class="cta-btn cta-btn-call">📞 Appeler Maintenant — 76 35 99 99</a>
+<a href="https://wa.me/22376359999" target="_blank" class="cta-btn cta-btn-wa">💬 WhatsApp — Commander / Réserver</a>
+<a href="https://www.facebook.com" target="_blank" class="cta-btn cta-btn-fb">f  Nous suivre sur Facebook</a>
+</div>
+</div>
+<div class="map-embed reveal reveal-delay-2">
+<div class="map-overlay-label">📍 Amandine · Bamako</div>
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.0!2d-8.0029!3d12.6392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDM4JzIxLjIiTiA4wrAwMCcxMC40Ilc!5e0!3m2!1sfr!2sml!4v1686000000000!5m2!1sfr!2sml"
+allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-brand-name">Amandine</div>
+<div class="footer-brand-tagline">by Sel & Miel</div>
+<p class="footer-desc">Restaurant, café et pâtisserie premium au cœur de Bamako. Disponibles 24h/24 pour vous offrir des saveurs d'exception.</p>
+<div class="footer-socials">
+<a href="https://www.facebook.com" target="_blank" class="footer-social" title="Facebook">f</a>
+<a href="https://wa.me/22376359999" target="_blank" class="footer-social" title="WhatsApp">W</a>
+<a href="tel:+22376359999" class="footer-social" title="Appeler">☎</a>
+</div>
+</div>
+<div>
+<h4>Navigation</h4>
+<ul class="footer-links">
+<li><a href="#about">Notre Histoire</a></li>
+<li><a href="#specialties">Spécialités</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#reviews">Avis Clients</a></li>
+<li><a href="#terrace">Terrasse</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4>Spécialités</h4>
+<ul class="footer-links">
+<li><a href="#menu">Shawarma</a></li>
+<li><a href="#menu">Pâtisseries</a></li>
+<li><a href="#menu">Gâteaux</a></li>
+<li><a href="#menu">Plats du Jour</a></li>
+<li><a href="#menu">Boissons</a></li>
+</ul>
+</div>
+<div>
+<h4>Contact</h4>
+<ul class="footer-links">
+<li><a href="tel:+22376359999">76 35 99 99</a></li>
+<li><a href="https://wa.me/22376359999" target="_blank">WhatsApp</a></li>
+<li><a href="#contact">J2C7+8X5, 734, Bamako</a></li>
+<li><a href="#contact" style="color:#4ADE80;">⬤ Ouvert 24h/24</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 Amandine by Sel & Miel. Bamako, Mali.</span>
+<span style="font-style:italic; font-family:'Cormorant Garamond',serif; color:var(--gold); opacity:0.6;">L'art de recevoir, réinventé.</span>
+</div>
+</footer>
+
+<!-- ── FLOATING WHATSAPP ── -->
+<a href="https://wa.me/22376359999?text=Bonjour%20Amandine%2C%20je%20souhaite%20passer%20une%20commande" target="_blank" class="float-wa" title="WhatsApp">
+<span class="float-wa-tooltip">Commander sur WhatsApp</span>
+💬
+</a>
+
+<!-- Mobile Sticky Bar -->
+<div class="mobile-sticky" id="mobileSticky">
+<a href="tel:+22376359999" class="ms-call">📞 Appeler</a>
+<a href="https://wa.me/22376359999" target="_blank" class="ms-wa">💬 WhatsApp</a>
+<a href="#menu" class="ms-menu">Menu</a>
+</div>
+
+<script>
+// ── NAV scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── Mobile nav
+function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); }
+function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
+
+// ── Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+
+// ── Menu filter
+function filterMenu(cat, btn) {
+document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+btn.classList.add('active');
+document.querySelectorAll('.menu-item').forEach(item => {
+item.style.display = item.dataset.cat === cat ? 'flex' : 'none';
+});
+}
+</script>
+</body>
+</html>
